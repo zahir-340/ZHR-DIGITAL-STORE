@@ -1,1 +1,616 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="ZHR Digital Store - Website Development, Free Fire Top-Up, VPN, Social Media Boosting and Digital Services.">
+<title>ZHR DIGITAL STORE | Your Digital Partner</title>
+
+<style>
+:root{
+  --bg:#080d18;
+  --card:#101c30;
+  --blue:#087bff;
+  --cyan:#39c8ff;
+  --white:#f4f8ff;
+  --muted:#a5b5cc;
+  --border:#1e3553;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,13,24,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+nav{
+  max-width:1150px;margin:auto;padding:16px 20px;
+  display:flex;justify-content:space-between;
+  align-items:center;gap:15px;
+}
+.logo{font-size:19px;font-weight:900;color:var(--cyan)}
+.logo span{color:white}
+.navlinks{display:flex;gap:20px;font-size:13px;color:var(--muted)}
+.navlinks a:hover{color:var(--cyan)}
+.menu{display:none;color:var(--cyan);font-size:13px}
+
+.hero{
+  min-height:530px;padding:90px 20px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  background:
+  radial-gradient(ellipse at 50% 10%,#174b83 0%,transparent 55%),
+  linear-gradient(180deg,#0a162a,#080d18);
+}
+.hero-content{max-width:820px}
+.tag{
+  display:inline-block;padding:7px 15px;
+  border:1px solid #2466a5;border-radius:30px;
+  color:var(--cyan);font-size:12px;
+  letter-spacing:2px;margin-bottom:22px;
+}
+.hero h1{
+  font-size:clamp(38px,7vw,70px);
+  line-height:1.13;margin-bottom:20px;
+}
+.hero h1 span{color:var(--cyan);text-shadow:0 0 25px #168cff66}
+.hero p{color:var(--muted);max-width:620px;margin:0 auto 28px}
+.btn{
+  display:inline-block;padding:13px 23px;
+  background:linear-gradient(100deg,#087bff,#21c5ff);
+  color:white;border-radius:8px;font-weight:bold;
+  transition:.25s;border:0;cursor:pointer;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px #168cff55}
+.btn-outline{background:transparent;border:1px solid #2879bc;margin-left:9px}
+
+section{padding:72px 20px}
+.container{max-width:1100px;margin:auto}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:clamp(27px,4vw,38px)}
+.section-title h2 span{color:var(--cyan)}
+.section-title p{color:var(--muted);margin-top:8px}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+.category-card{
+  display:block;padding:25px 20px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:linear-gradient(145deg,#14243c,#0d1625);
+  transition:.25s;
+}
+.category-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--blue);
+  box-shadow:0 10px 30px #087bff20;
+}
+.category-icon{font-size:34px;margin-bottom:10px}
+.category-card h3{font-size:18px;margin-bottom:7px}
+.category-card p{color:var(--muted);font-size:13px}
+.arrow{color:var(--cyan);font-size:13px;margin-top:14px;display:block}
+
+.service-section{border-top:1px solid #14263d}
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
+  gap:18px;
+}
+.service-card{
+  background:linear-gradient(145deg,#14233a,#0d1625);
+  border:1px solid var(--border);
+  border-radius:13px;padding:22px;
+  transition:.25s;
+}
+.service-card:hover{border-color:var(--blue);transform:translateY(-4px)}
+.service-card h3{font-size:17px;margin-bottom:8px}
+.service-card p{color:var(--muted);font-size:13px}
+.price{font-size:23px;font-weight:900;color:var(--cyan);margin:15px 0}
+.order{
+  display:block;text-align:center;padding:10px;
+  margin-top:15px;background:#087bff;
+  border-radius:7px;font-size:13px;font-weight:bold;
+}
+.order:hover{background:#159eff}
+.package-list{list-style:none;margin:14px 0}
+.package-list li{
+  padding:8px 0;border-bottom:1px solid #20334d;
+  font-size:14px;color:#d9e8fa;
+}
+.package-list li:last-child{border-bottom:0}
+.small-note{color:var(--muted);font-size:12px;margin-top:12px}
+.highlight{
+  background:#10294a;border:1px solid #20558a;
+  padding:17px;border-radius:10px;margin-top:20px;
+}
+.highlight h3{color:var(--cyan);margin-bottom:7px}
+.about{
+  background:#0c1524;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.about-content{max-width:760px;margin:auto;text-align:center}
+.about-content p{color:var(--muted);margin-top:12px}
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:13px;margin-top:28px;
+}
+.feature{
+  padding:17px;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;
+}
+.feature strong{color:var(--cyan)}
+.contact-box{
+  text-align:center;padding:40px 20px;
+  border:1px solid #20558a;border-radius:16px;
+  background:radial-gradient(ellipse at top,#12365c,#101a2b);
+}
+.contact-box p{color:var(--muted);margin:12px 0 24px}
+footer{
+  padding:25px 15px;text-align:center;
+  color:var(--muted);font-size:13px;
+  border-top:1px solid var(--border);
+}
+footer strong{color:var(--cyan)}
+.backtop{
+  position:fixed;bottom:20px;right:18px;
+  width:43px;height:43px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#087bff;color:white;font-size:20px;
+  box-shadow:0 5px 20px #087bff55;
+}
+@media(max-width:650px){
+  .navlinks{display:none}
+  .menu{display:block}
+  .hero{min-height:480px;padding:70px 18px}
+  .btn-outline{margin:12px 0 0}
+  section{padding:58px 16px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <a href="#home" class="logo">ZHR <span>DIGITAL STORE</span></a>
+  <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#all-services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="menu" href="#all-services">EXPLORE ↓</a>
+</nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">WELCOME TO ZHR DIGITAL STORE</div>
+    <h1>Your One-Stop <span>Digital Solutions</span> Partner</h1>
+    <p>
+      Website Development, Gaming Services, VPN Solutions,
+      Digital Subscriptions and Social Media Services —
+      everything you need in one place.
+    </p>
+    <a href="#all-services" class="btn">Explore Our Services</a>
+    <a href="#contact" class="btn btn-outline">Contact Us</a>
+  </div>
+</section>
+
+<!-- MAIN SERVICE CATEGORIES -->
+<section id="all-services">
+<div class="container">
+  <div class="section-title">
+    <h2>Our <span>Services</span></h2>
+    <p>Explore our digital services and choose what you need.</p>
+  </div>
+
+  <div class="category-grid">
+    <a class="category-card" href="#web-development">
+      <div class="category-icon">🌐</div>
+      <h3>Website Development</h3>
+      <p>Modern and professional websites for your ideas and business.</p>
+      <span class="arrow">Explore Services →</span>
+    </a>
+
+    <a class="category-card" href="#freefire-topup">
+      <div class="category-icon">🎮</div>
+      <h3>Free Fire Top-Up</h3>
+      <p>Diamonds, memberships and game passes.</p>
+      <span class="arrow">Explore Packages →</span>
+    </a>
+
+    <a class="category-card" href="#ff-likes">
+      <div class="category-icon">❤️</div>
+      <h3>Free Fire UID Likes</h3>
+      <p>Available likes packages for different durations.</p>
+      <span class="arrow">Explore Packages →</span>
+    </a>
+
+    <a class="category-card" href="#social-boosting">
+      <div class="category-icon">📱</div>
+      <h3>Social Media Boosting</h3>
+      <p>Instagram and TikTok engagement services.</p>
+      <span class="arrow">Explore Services →</span>
+    </a>
+
+    <a class="category-card" href="#vpn">
+      <div class="category-icon">🔐</div>
+      <h3>VPN Services</h3>
+      <p>VPN packages, features and connection information.</p>
+      <span class="arrow">Learn More →</span>
+    </a>
+
+    <a class="category-card" href="#subscriptions">
+      <div class="category-icon">⭐</div>
+      <h3>Digital Subscriptions</h3>
+      <p>Explore our available digital subscriptions.</p>
+      <span class="arrow">Explore Services →</span>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- WEBSITE DEVELOPMENT -->
+<section class="service-section" id="web-development">
+<div class="container">
+  <div class="section-title">
+    <h2>Website <span>Development</span></h2>
+    <p>Professional websites at affordable prices.</p>
+  </div>
+
+  <div class="service-grid">
+
+    <article class="service-card">
+      <h3>💌 Digital Invitation Website</h3>
+      <p>Beautiful digital invitations for your special occasions.</p>
+      <div class="price">Rs. 750</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20a%20Digital%20Invitation%20Website%20-%20Rs.%20750.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>👨‍💻 Personal Portfolio Website</h3>
+      <p>Showcase your skills, experience and personal projects.</p>
+      <div class="price">Rs. 1,000</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20a%20Personal%20Portfolio%20Website%20-%20Rs.%201000.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🍽️ QR Menu Website</h3>
+      <p>Display your restaurant menu through a QR code.</p>
+      <div class="price">Rs. 1,000</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20a%20QR%20Menu%20Website%20-%20Rs.%201000.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🏢 Business Website</h3>
+      <p>Give your business a professional online presence.</p>
+      <div class="price">Rs. 1,000</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20a%20Business%20Website%20-%20Rs.%201000.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🎓 Tuition Class Website</h3>
+      <p>Show class details, subjects, schedules and contact information.</p>
+      <div class="price">Rs. 1,000</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20a%20Tuition%20Class%20Website%20-%20Rs.%201000.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🛠️ Custom Tools Website</h3>
+      <p>Useful online tools designed for your requirements.</p>
+      <div class="price">Rs. 1,000</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20a%20Custom%20Tools%20Website%20-%20Rs.%201000.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🛍️ Digital Store Website</h3>
+      <p>Showcase your products and let customers order through WhatsApp.</p>
+      <div class="price">Rs. 1,500</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20a%20Digital%20Store%20Website%20-%20Rs.%201500.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🎮 Gaming Tournament Website</h3>
+      <p>Present tournament details, rules and team information.</p>
+      <div class="price">Rs. 1,500</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20a%20Gaming%20Tournament%20Website%20-%20Rs.%201500.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🏆 Live Registration & Leaderboard</h3>
+      <p>Registration and leaderboard features for tournaments.</p>
+      <div class="price">Rs. 2,000</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20Live%20Registration%20%26%20Leaderboard%20-%20Rs.%202000.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>☁️ Customer File Upload & Storage</h3>
+      <p>Allow customers to upload files using a cloud storage solution.</p>
+      <div class="price">Rs. 2,000</div>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20Customer%20File%20Upload%20%26%20Storage%20-%20Rs.%202000.">Order via WhatsApp</a>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- FREE FIRE TOPUP -->
+<section class="service-section" id="freefire-topup">
+<div class="container">
+  <div class="section-title">
+    <h2>Free Fire <span>Top-Up</span></h2>
+    <p>Choose your preferred game top-up package.</p>
+  </div>
+
+  <div class="service-grid">
+    <article class="service-card">
+      <h3>💎 Memberships</h3>
+      <ul class="package-list">
+        <li>Weekly Lite</li>
+        <li>Weekly</li>
+        <li>Monthly</li>
+        <li>VIP Membership</li>
+        <li>Super VIP Membership</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20Free%20Fire%20Membership%20Top-Up.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>💎 Diamond Top-Up</h3>
+      <p>Different diamond packages available.</p>
+      <ul class="package-list">
+        <li>25 Diamonds</li>
+        <li>100 Diamonds</li>
+        <li>310 Diamonds</li>
+        <li>520 Diamonds</li>
+        <li>1060 Diamonds</li>
+        <li>2180 Diamonds</li>
+        <li>5600 Diamonds</li>
+        <li>11500 Diamonds</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20Free%20Fire%20Diamond%20Top-Up.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🎟️ Level Up Pass</h3>
+      <ul class="package-list">
+        <li>Level 6</li>
+        <li>Level 10</li>
+        <li>Level 15</li>
+        <li>Level 20</li>
+        <li>Level 25</li>
+        <li>Level 30</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20Free%20Fire%20Level%20Up%20Pass.">Order via WhatsApp</a>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- FREE FIRE LIKES -->
+<section class="service-section" id="ff-likes">
+<div class="container">
+  <div class="section-title">
+    <h2>Free Fire UID <span>Likes</span></h2>
+    <p>Choose your preferred likes duration.</p>
+  </div>
+
+  <div class="service-grid">
+    <article class="service-card">
+      <h3>❤️ UID Likes Packages</h3>
+      <p>Available likes package: 200 likes per day.</p>
+      <ul class="package-list">
+        <li>1 Day</li>
+        <li>3 Days</li>
+        <li>7 Days</li>
+        <li>15 Days</li>
+        <li>20 Days</li>
+        <li>25 Days</li>
+        <li>30 Days</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20Free%20Fire%20UID%20Likes.%20Please%20share%20available%20packages.">Order via WhatsApp</a>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section class="service-section" id="social-boosting">
+<div class="container">
+  <div class="section-title">
+    <h2>Social Media <span>Boosting</span></h2>
+    <p>Explore our available social media services.</p>
+  </div>
+
+  <div class="service-grid">
+    <article class="service-card">
+      <h3>📸 Instagram Services</h3>
+      <ul class="package-list">
+        <li>Instagram Followers</li>
+        <li>Instagram Likes</li>
+        <li>Instagram Comments</li>
+        <li>Other Available Services</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20Instagram%20Boosting%20Services.">Order via WhatsApp</a>
+    </article>
+
+    <article class="service-card">
+      <h3>🎵 TikTok Services</h3>
+      <ul class="package-list">
+        <li>TikTok Followers</li>
+        <li>TikTok Likes</li>
+        <li>TikTok Comments</li>
+        <li>Other Available Services</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20TikTok%20Boosting%20Services.">Order via WhatsApp</a>
+    </article>
+  </div>
+  <p class="small-note">Availability and delivery details will be confirmed through WhatsApp.</p>
+</div>
+</section>
+
+<!-- VPN -->
+<section class="service-section" id="vpn">
+<div class="container">
+  <div class="section-title">
+    <h2>VPN <span>Services</span></h2>
+    <p>Stay connected with our available VPN solutions.</p>
+  </div>
+
+  <div class="service-grid">
+    <article class="service-card">
+      <h3>🔐 Available Network Packages</h3>
+      <ul class="package-list">
+        <li>Dialog Packages</li>
+        <li>Mobitel Packages</li>
+        <li>Hutch Packages</li>
+        <li>Airtel Packages</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20to%20know%20about%20available%20VPN%20packages.">Check Available Packages</a>
+    </article>
+
+    <article class="service-card">
+      <h3>⚡ How Does VPN Work?</h3>
+      <p>
+        A VPN creates an encrypted connection between your device
+        and a VPN server. Your internet traffic is routed through
+        that server, and websites generally see the server's IP
+        address instead of your original public IP address.
+      </p>
+      <div class="highlight">
+        <h3>VPN Benefits</h3>
+        <p>• Helps protect traffic on supported connections</p>
+        <p>• Uses a VPN server IP address</p>
+        <p>• Can route supported internet traffic through a server</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <h3>📱 How to Get Connected</h3>
+      <ul class="package-list">
+        <li>Contact us on WhatsApp</li>
+        <li>Choose an available package</li>
+        <li>Receive your connection details</li>
+        <li>Configure your VPN app</li>
+        <li>Connect and test your service</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20please%20help%20me%20with%20VPN%20connection%20setup.">Get Connection Help</a>
+    </article>
+  </div>
+
+  <p class="small-note">
+    VPN compatibility and data usage depend on the mobile network,
+    package terms, device and configuration. A VPN does not create
+    extra mobile data or guarantee unlimited access.
+  </p>
+</div>
+</section>
+
+<!-- SUBSCRIPTIONS -->
+<section class="service-section" id="subscriptions">
+<div class="container">
+  <div class="section-title">
+    <h2>Digital <span>Subscriptions</span></h2>
+    <p>Explore our available digital subscription services.</p>
+  </div>
+
+  <div class="service-grid">
+    <article class="service-card">
+      <h3>▶️ YouTube Premium</h3>
+      <p>Enjoy available YouTube Premium subscription options.</p>
+      <ul class="package-list">
+        <li>Premium Membership</li>
+        <li>Available Subscription Plans</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20YouTube%20Premium.">Contact for Availability</a>
+    </article>
+
+    <article class="service-card">
+      <h3>✨ Gemini Pro</h3>
+      <p>Ask us about available Gemini subscription options.</p>
+      <ul class="package-list">
+        <li>Gemini Pro</li>
+        <li>Available Subscription Plans</li>
+      </ul>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20Gemini%20Pro.">Contact for Availability</a>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+<div class="about-content">
+  <div class="section-title">
+    <h2>About <span>ZHR Digital Store</span></h2>
+  </div>
+  <p>
+    ZHR DIGITAL STORE brings together digital solutions,
+    gaming services, website development, VPN services
+    and social media services in one place.
+    Our goal is to provide convenient service and friendly support.
+  </p>
+  <div class="features">
+    <div class="feature">🌐<br><strong>Digital Solutions</strong></div>
+    <div class="feature">⚡<br><strong>Quick Support</strong></div>
+    <div class="feature">📱<br><strong>Easy Ordering</strong></div>
+    <div class="feature">🤝<br><strong>Customer Care</strong></div>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+  <div class="contact-box">
+    <div class="section-title">
+      <h2>Need a <span>Service?</span></h2>
+    </div>
+    <p>
+      Have a question or want to place an order?
+      Contact ZHR DIGITAL STORE through WhatsApp.
+    </p>
+    <a class="btn"
+       href="https://wa.me/94743820716?text=Hi%20ZHR%20DIGITAL%20STORE%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services.">
+       💬 Contact Us on WhatsApp
+    </a>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>ZHR DIGITAL STORE</strong></p>
+  <p>Your Digital Partner.</p>
+  <p>© <span id="year"></span> ZHR DIGITAL STORE. All Rights Reserved.</p>
+</footer>
+
+<a href="#home" class="backtop" aria-label="Back to top">↑</a>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
