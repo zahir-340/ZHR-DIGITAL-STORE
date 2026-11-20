@@ -149,8 +149,23 @@ section{padding:72px 20px}
 .package-list li{
   padding:8px 0;border-bottom:1px solid #20334d;
   font-size:14px;color:#d9e8fa;
+  display:flex;justify-content:space-between;
+  align-items:center;gap:8px;
 }
 .package-list li:last-child{border-bottom:0}
+.package-price{color:var(--cyan);font-weight:bold;white-space:nowrap}
+.save-tag{
+  display:inline-block;
+  background:#123e32;
+  color:#55e6a5;
+  border:1px solid #237b5c;
+  border-radius:5px;
+  padding:2px 6px;
+  font-size:10px;
+  font-weight:bold;
+  margin-left:4px;
+  white-space:nowrap;
+}
 .small-note{color:var(--muted);font-size:12px;margin-top:12px}
 .highlight{
   background:#10294a;border:1px solid #20558a;
@@ -180,6 +195,21 @@ section{padding:72px 20px}
   background:radial-gradient(ellipse at top,#12365c,#101a2b);
 }
 .contact-box p{color:var(--muted);margin:12px 0 24px}
+.group-box{
+  text-align:center;padding:35px 20px;
+  border:1px solid #1c684c;border-radius:16px;
+  background:radial-gradient(ellipse at top,#123c32,#101a2b);
+}
+.group-box h2{font-size:clamp(25px,4vw,34px)}
+.group-box h2 span{color:#55e6a5}
+.group-box p{color:var(--muted);margin:12px auto 22px;max-width:600px}
+.group-btn{
+  display:inline-block;padding:13px 23px;
+  background:#168b55;color:white;
+  border-radius:8px;font-weight:bold;
+  transition:.25s;
+}
+.group-btn:hover{background:#20a969;transform:translateY(-3px)}
 footer{
   padding:25px 15px;text-align:center;
   color:var(--muted);font-size:13px;
@@ -385,27 +415,27 @@ footer strong{color:var(--cyan)}
     <article class="service-card">
       <h3>💎 Memberships</h3>
       <ul class="package-list">
-        <li>Weekly Lite</li>
-        <li>Weekly</li>
-        <li>Monthly</li>
-        <li>VIP Membership</li>
-        <li>Super VIP Membership</li>
+        <li><span>Weekly Lite</span><strong class="package-price">Rs. 140</strong></li>
+        <li><span>Weekly</span><strong class="package-price">Rs. 580</strong></li>
+        <li><span>Monthly</span><strong class="package-price">Rs. 2,850</strong></li>
+        <li><span>VIP Membership</span><strong class="package-price">Rs. 3,500</strong></li>
+        <li><span>Super VIP Membership</span><strong class="package-price">Rs. 5,450</strong></li>
       </ul>
       <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20Free%20Fire%20Membership%20Top-Up.">Order via WhatsApp</a>
     </article>
 
     <article class="service-card">
       <h3>💎 Diamond Top-Up</h3>
-      <p>Different diamond packages available.</p>
+      <p>Choose your preferred diamond package.</p>
       <ul class="package-list">
-        <li>25 Diamonds</li>
-        <li>100 Diamonds</li>
-        <li>310 Diamonds</li>
-        <li>520 Diamonds</li>
-        <li>1060 Diamonds</li>
-        <li>2180 Diamonds</li>
-        <li>5600 Diamonds</li>
-        <li>11500 Diamonds</li>
+        <li><span>25 Diamonds</span><strong class="package-price">Rs. 90</strong></li>
+        <li><span>100 Diamonds</span><strong class="package-price">Rs. 350</strong></li>
+        <li><span>310 Diamonds</span><strong class="package-price">Rs. 1,050</strong></li>
+        <li><span>520 Diamonds</span><strong class="package-price">Rs. 1,750</strong></li>
+        <li><span>1,060 Diamonds</span><strong class="package-price">Rs. 3,350</strong></li>
+        <li><span>2,180 Diamonds</span><strong class="package-price">Rs. 6,700</strong></li>
+        <li><span>5,600 Diamonds</span><strong class="package-price">Rs. 16,500</strong></li>
+        <li><span>11,500 Diamonds</span><strong class="package-price">Rs. 33,700</strong></li>
       </ul>
       <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20Free%20Fire%20Diamond%20Top-Up.">Order via WhatsApp</a>
     </article>
@@ -413,12 +443,12 @@ footer strong{color:var(--cyan)}
     <article class="service-card">
       <h3>🎟️ Level Up Pass</h3>
       <ul class="package-list">
-        <li>Level 6</li>
-        <li>Level 10</li>
-        <li>Level 15</li>
-        <li>Level 20</li>
-        <li>Level 25</li>
-        <li>Level 30</li>
+        <li><span>Level 6</span><strong class="package-price">Rs. 120</strong></li>
+        <li><span>Level 10</span><strong class="package-price">Rs. 230</strong></li>
+        <li><span>Level 15</span><strong class="package-price">Rs. 230</strong></li>
+        <li><span>Level 20</span><strong class="package-price">Rs. 230</strong></li>
+        <li><span>Level 25</span><strong class="package-price">Rs. 230</strong></li>
+        <li><span>Level 30</span><strong class="package-price">Rs. 360</strong></li>
       </ul>
       <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20want%20Free%20Fire%20Level%20Up%20Pass.">Order via WhatsApp</a>
     </article>
@@ -439,13 +469,20 @@ footer strong{color:var(--cyan)}
       <h3>❤️ UID Likes Packages</h3>
       <p>Available likes package: 200 likes per day.</p>
       <ul class="package-list">
-        <li>1 Day</li>
-        <li>3 Days</li>
-        <li>7 Days</li>
-        <li>15 Days</li>
-        <li>20 Days</li>
-        <li>25 Days</li>
-        <li>30 Days</li>
+        <li><span>1 Day</span><strong class="package-price">Rs. 160</strong></li>
+        <li><span>3 Days</span><strong class="package-price">Rs. 480</strong></li>
+        <li>
+          <span>7 Days</span>
+          <span><strong class="package-price">Rs. 1,000</strong><br><span class="save-tag">SAVE Rs. 120</span></span>
+        </li>
+        <li>
+          <span>15 Days</span>
+          <span><strong class="package-price">Rs. 1,900</strong><br><span class="save-tag">SAVE Rs. 500</span></span>
+        </li>
+        <li>
+          <span>30 Days</span>
+          <span><strong class="package-price">Rs. 3,700</strong><br><span class="save-tag">SAVE Rs. 1,100</span></span>
+        </li>
       </ul>
       <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20Free%20Fire%20UID%20Likes.%20Please%20share%20available%20packages.">Order via WhatsApp</a>
     </article>
@@ -556,22 +593,38 @@ footer strong{color:var(--cyan)}
   <div class="service-grid">
     <article class="service-card">
       <h3>▶️ YouTube Premium</h3>
-      <p>Enjoy available YouTube Premium subscription options.</p>
+      <p>Choose your preferred subscription plan.</p>
       <ul class="package-list">
-        <li>Premium Membership</li>
-        <li>Available Subscription Plans</li>
+        <li>
+          <span>Individual – 1 Month</span>
+          <strong class="package-price">Rs. 250</strong>
+        </li>
+        <li>
+          <span>Family (5 Members) – 1 Month</span>
+          <strong class="package-price">Rs. 1,200</strong>
+        </li>
+        <li>
+          <span>Individual – 3 Months</span>
+          <strong class="package-price">Rs. 650</strong>
+        </li>
+        <li>
+          <span>Family (5 Members) – 3 Months</span>
+          <strong class="package-price">Rs. 3,000</strong>
+        </li>
       </ul>
-      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20YouTube%20Premium.">Contact for Availability</a>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20YouTube%20Premium.%20Please%20help%20me%20choose%20a%20plan.">Order via WhatsApp</a>
     </article>
 
     <article class="service-card">
       <h3>✨ Gemini Pro</h3>
-      <p>Ask us about available Gemini subscription options.</p>
+      <p>Explore our available Gemini Pro subscription.</p>
       <ul class="package-list">
-        <li>Gemini Pro</li>
-        <li>Available Subscription Plans</li>
+        <li>
+          <span>Gemini Pro – 18 Months</span>
+          <strong class="package-price">Rs. 499</strong>
+        </li>
       </ul>
-      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20Gemini%20Pro.">Contact for Availability</a>
+      <a class="order" href="https://wa.me/94743820716?text=Hi%2C%20I%20am%20interested%20in%20Gemini%20Pro%2018%20Months%20-%20Rs.%20499.">Order via WhatsApp</a>
     </article>
   </div>
 </div>
@@ -612,6 +665,26 @@ footer strong{color:var(--cyan)}
     <a class="btn"
        href="https://wa.me/94743820716?text=Hi%20ZHR%20DIGITAL%20STORE%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services.">
        💬 Contact Us on WhatsApp
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- WHATSAPP GROUP -->
+<section id="whatsapp-group">
+<div class="container">
+  <div class="group-box">
+    <h2>Join Our <span>WhatsApp Group</span></h2>
+    <p>
+      Join ZHR DIGITAL STORE to get the latest offers,
+      price updates, new services and announcements.
+      Stay connected with us!
+    </p>
+    <a class="group-btn"
+       href="https://chat.whatsapp.com/IHJpzsdk3GEDXuttO8H4bL?s=cl&p=a&iam=2"
+       target="_blank"
+       rel="noopener noreferrer">
+       💬 Join ZHR DIGITAL STORE Group
     </a>
   </div>
 </div>
